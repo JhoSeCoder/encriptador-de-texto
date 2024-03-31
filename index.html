@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encriptador de texto</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="box">
+            <img class="logo" src="img/logo.svg" alt="">
+        </div>
+    </header>
+    <main>
+        <div class="main">
+            <div class="block-one">
+                <textarea id="enteredText" class="entered-text" placeholder="Ingrese texto aquí"></textarea>
+                <div class="entered-text-footer">
+
+                    <img src="img/alerta.svg" alt="">
+
+                    <span class="warning-message">Solo letras minúsculas y sin acentos.</span>
+
+                    <div class="buttons-one">
+                        <button id="buttonEncrypt" class="button-encrypt" onclick="btnEncrypt()">Encriptar</button>
+                        <button id="buttonDecrypt" class="button-decrypt" onclick="btnDecrypt()">Desencriptar</button>
+                    </div>
+
+                </div>
+            </div>
+            <div id="blockTwo" class="block-two">
+                <img id="doll" class="doll" src="img/muñeco.svg" alt="">
+                <textarea id="finalMessage" class="final-message" placeholder="Ningún mensaje fue encontrado"></textarea>
+                <p id="hiddenMessage" class="hidden-message">Ingresa el texto que desees encriptar o desencriptar.</p>
+                <button id="buttonCopy" class="button-copy hidden" onclick="btnCopy()">Copiar</button>
+            </div>
+        </div>
+        <video muted autoplay loop>
+            <source src="./video/fondo.mp4" type="video/mp4">
+        </video>
+        <div class="layer"></div>
+    </main>
+    <!--<footer class="footer">
+        <p class="copyright">Desarrollado por JhoSeCoder</p> 
+        <div>
+            <a href="https://github.com/JhoSeCoder" target="_blank">
+                <img class="links" src="img/github-mark-white.svg">
+            </a>
+
+            <a href="https://www.linkedin.com/in/jhon-sergio-ureta-diaz/" target="_blank">
+                <img class="links" src="img/linkedin.svg">
+            </a>
+        </div> 
+    </footer> -->
+    <script src="js/script.js"></script>
+</body>
+</html>
