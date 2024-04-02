@@ -35,7 +35,6 @@ const reset = () => {
     enteredText.focus();
 }
 
-
 // Función para ejecutar encriptado de texto al hacer click en el boton Encriptar.
 function btnEncrypt() {
     const textEncrypt = encrypt(enteredText.value) + "\n";
@@ -76,11 +75,14 @@ function decrypt(decryptPhrase) {
     return decryptPhrase;
 }
 
-// Función que copia el texto encriptado.
-function btnCopy() {
-    let textCopy = finalMessage;
-    textCopy.select();
-    document.execCommand('copy');
-    alert("Texto copiado");
-    reset();
+// Función btnCopy para usar la API del portapapeles.
+async function btnCopy() {
+    let textCopy = finalMessage.value;
+    try {
+        await navigator.clipboard.writeText(textCopy);
+        alert("Texto copiado");
+        reset();
+    } catch (err) {
+        alert('Error al copiar el texto: ', err);
+    }
 }
